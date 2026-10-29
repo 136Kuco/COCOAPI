@@ -83,3 +83,6 @@ deploy/redis_data/
 .claude/
 issues/
 CLAUDE.md
+
+# cocoAPI local credentials and persistent service data
+.cocoapi-runtime/

@@ -1,0 +1,33 @@
+{
+  "services": {
+    "sub2api": {
+      "volumes": [
+        "/etc/ssl/certs/ca-certificates.crt:/run/cocoapi-ca.pem:ro"
+      ],
+      "environment": {
+        "SSL_CERT_FILE": "/run/cocoapi-ca.pem"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "wget",
+          "-Y",
+          "off",
+          "-q",
+          "-T",
+          "5",
+          "-O",
+          "/dev/null",
+          "http://127.0.0.1:8080/health"
+        ]
+      },
+      "image": "weishaw/sub2api@sha256:969e5c0fddc13f52be2772ea86e8e03ee2261f80ff08495916ffff68292c8380"
+    },
+    "postgres": {
+      "image": "postgres@sha256:10a5c69a83035ab5239f5620d708520e8b28f5aa1f2b20143e6024532edadfb5"
+    },
+    "redis": {
+      "image": "redis@sha256:21090af93f8324db2f0f0f4f38a7c60369d47d917e000c3423d89d2ae2883537"
+    }
+  }
+}
