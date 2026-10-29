@@ -1,0 +1,125 @@
+{
+  "referenceCommit": "dece26153621959ccd7635814f4b2d08304e681a",
+  "newSourceFiles": [
+    {
+      "path": "backend/internal/handler/admin/gemini_oauth_handler.go",
+      "sha": "8c398a1e73c0df91dcd51fb5d97fdd3e035bcf6f",
+      "size": 5096
+    },
+    {
+      "path": "backend/internal/handler/gateway_compat_stream_usage_test.go",
+      "sha": "84f2e587d431c56f8c80abd25377f9403d931014",
+      "size": 9392
+    },
+    {
+      "path": "backend/internal/handler/gateway_handler_billing_error_test.go",
+      "sha": "eaf48d1eaa622a12e28bd2b869562a279f9cb046",
+      "size": 5041
+    },
+    {
+      "path": "backend/internal/handler/gateway_handler_cancellation_test.go",
+      "sha": "9573aa83918843c9ea19be46f9a8671507d4be24",
+      "size": 3811
+    },
+    {
+      "path": "backend/internal/handler/gateway_handler_chat_completions.go",
+      "sha": "ab9f931390abd9e26fb434bcf73f95fad28a7cd1",
+      "size": 17086
+    },
+    {
+      "path": "backend/internal/handler/gateway_handler_claude_code_fallback_test.go",
+      "sha": "ae15cd887d80dba48b9e46b21dcbb04ded59825c",
+      "size": 6290
+    },
+    {
+      "path": "backend/internal/handler/gateway_handler_error_fallback_test.go",
+      "sha": "917a85e009aaed0310b92997466b6b1fcb63c3fa",
+      "size": 8466
+    },
+    {
+      "path": "backend/internal/handler/gateway_handler_intercept_test.go",
+      "sha": "577e6098aeb9222df4bc8972b9a5b10f9e4b57e6",
+      "size": 1837
+    },
+    {
+      "path": "backend/internal/handler/gateway_handler_responses.go",
+      "sha": "1800e5dda59227154576ff96905852ebbe9b27e5",
+      "size": 17151
+    },
+    {
+      "path": "backend/internal/handler/gateway_handler_stream_failover_test.go",
+      "sha": "dc4b8dd20efdcbdb7fde1aa2918a8a20c2757c35",
+      "size": 5768
+    }
+  ],
+  "environment": {
+    "revision": 2,
+    "entries": [
+      {
+        "key": "ADMIN_USER_ID",
+        "is_secret": true
+      },
+      {
+        "key": "COCO_VAULT_KEY",
+        "is_secret": true
+      }
+    ]
+  },
+  "database": {
+    "project_id": "appgprj_6ae2c53d4f548191849f8dbe88fa0a9a",
+    "bindings": [
+      "DB"
+    ],
+    "selected_binding_name": "DB",
+    "tables": [
+      "api_keys",
+      "connection_tests",
+      "provider_secrets",
+      "request_logs"
+    ],
+    "model_projection": {
+      "truncated": false,
+      "omitted_project_id": false,
+      "omitted_selected_binding": false,
+      "omitted_bindings": 0,
+      "omitted_tables": 0
+    }
+  },
+  "liveResults": [
+    {
+      "case": "public_models",
+      "http": 403,
+      "layer": "Cloudflare",
+      "code": 1010,
+      "ray": "a523e7b02eee6162"
+    },
+    {
+      "case": "service_health",
+      "http": 200,
+      "databaseReady": true,
+      "adminConfigured": true,
+      "vaultReady": true,
+      "deepseekConfigured": false,
+      "gatewayReady": false
+    },
+    {
+      "case": "service_models_invalid_key",
+      "http": 401
+    },
+    {
+      "case": "service_admin",
+      "http": 403
+    },
+    {
+      "case": "service_credentials_status",
+      "http": 403
+    },
+    {
+      "case": "browser_preflight",
+      "http": 403,
+      "allowOrigin": null
+    }
+  ],
+  "supplierCalls": 0,
+  "productionWrites": 0
+}
